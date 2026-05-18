@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-opus-4-7",
+        model: "claude-opus-4-20250514",
         max_tokens: 1000,
         messages: [
           {
@@ -42,6 +42,8 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
+    console.error(error);
+
     return res.status(500).json({
       error: error.message,
     });
