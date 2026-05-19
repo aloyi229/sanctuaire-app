@@ -129,8 +129,8 @@ async function ai(prompt, max = 1000) {
     if (data.text) return data.text;
 
     if (data.error) {
-      return "Erreur : " + data.error;
-    }
+  return "Erreur : " + JSON.stringify(data.error);
+}
 
     return "Aucune réponse.";
 
