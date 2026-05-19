@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "model: "claude-opus-4-7",
+        model: "claude-opus-4-7",
         max_tokens: 1000,
         messages: [
           {
@@ -29,11 +29,11 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    console.log(data);
+    console.log("Anthropic response:", data);
 
     if (!response.ok) {
       return res.status(response.status).json({
-        error: JSON.stringify(data),
+        error: data,
       });
     }
 
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error(error);
+    console.error("Server error:", error);
 
     return res.status(500).json({
       error: error.message,
