@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   try {
     const data = req.body;
 
-    console.log("Paiement reçu :", data);
+    console.log(JSON.stringify(data, null, 2));
 
     return res.status(200).json({
       success: true,
